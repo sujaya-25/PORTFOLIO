@@ -1,0 +1,68 @@
+﻿================================================================================
+SMART FINGERPRINT DOOR LOCK SYSTEM - CIRCUIT SCHEMATIC & PIN CONNECTION MAP
+Developer: Sujaya K S | Department of ECE | Dr. N.G.P. Institute of Technology
+================================================================================
+
+1. COMPONENT INTERCONNECT TABLE:
+
+  Arduino Uno Pin     Connected Component            Component Pin / Description
+  -----------------   ----------------------------   ---------------------------
+  Pin 5V              R307 Biometric Sensor          VCC (Red Wire)
+  Pin GND             R307 Biometric Sensor          GND (Black Wire)
+  Pin 2 (RX)          R307 Biometric Sensor          TX (White/Yellow Wire)
+  Pin 3 (TX)          R307 Biometric Sensor          RX (Green Wire)
+  
+  Pin 7               5V Relay Module                IN (Relay Trigger, Active-LOW)
+  Pin 5V              5V Relay Module                VCC
+  Pin GND             5V Relay Module                GND
+  
+  Pin 8               Green LED                      Anode (+) via 220 Ohm resistor
+  Pin 9               Red LED                        Anode (+) via 220 Ohm resistor
+  Pin 10              Piezo Buzzer                   Positive (+) terminal
+  Pin GND             LEDs & Buzzer Common           Cathodes (-) / Ground
+
+  External 12V 2A DC  Solenoid Door Lock             (+) Positive to Relay COM terminal
+  Relay NO terminal   Solenoid Door Lock             (+) Positive input
+  External 12V GND    Solenoid Door Lock             (-) Return & Arduino GND
+
+--------------------------------------------------------------------------------
+2. ASCII SCHEMATIC & INDUCTIVE ISOLATION:
+
+          +5V (Arduino)
+           |
+           +-----------------------+---------------------+
+           |                       |                     |
+      [R307 Sensor]           [Relay Module]        [Status LEDs / Buzzer]
+       VCC   GND               VCC  GND  IN          D8(Grn) D9(Red) D10(Buzz)
+        |     |                 |    |   |               |       |       |
+       +5V   GND               +5V  GND  D7             220R    220R   Piezo
+        |     |                          |               |       |       |
+       TX -> D2 (SoftwareSerial RX)      |              GND     GND     GND
+       RX <- D3 (SoftwareSerial TX)      |
+                                         |
+                                         v
+               +------------------------------------+
+               |           1-Channel Relay          |
+               |                                    |
+               |  COM Terminal <---- +12V DC Adapter|
+               |  NO Terminal  ----> Solenoid (+)   |
+               +------------------------------------+
+                                         |
+                                         |  +---------+
+                                         +--| 1N4007  |--+
+                                         |  | Diode   |  | (Reverse-biased Flyback)
+                                         |  +---------+  |
+                                         v               v
+                              [12V Solenoid Lock Coil]
+                                         |
+                                         v
+                              12V DC Adapter Ground (Connected to Arduino GND)
+
+--------------------------------------------------------------------------------
+3. CRITICAL SAFETY NOTES:
+   * 1N4007 Flyback Diode: Placed across the solenoid coil in reverse bias to 
+     suppress back-EMF voltage spikes when the relay turns off, protecting the 
+     Arduino microcontroller from inductive resets.
+   * Common Ground: The external 12V power supply ground must be tied to the 
+     Arduino GND to maintain equal potential reference.
+================================================================================

@@ -1,0 +1,9 @@
+﻿roll_no,name,department,exam_code,exam_name,hall_no,floor,desk_no,rfid_tag,fingerprint_id,reporting_time
+7377211EC101,Sujaya K S,ECE,EC8501,Digital Communication,Hall A-102,1st Floor,D-14,RFID_9A8B7C,FP_101,09:30 AM
+7377211EC102,Aravind Swaminathan,ECE,EC8501,Digital Communication,Hall A-102,1st Floor,D-15,RFID_1B2C3D,FP_102,09:30 AM
+7377211EC103,Bhavana Ramesh,ECE,EC8501,Digital Communication,Hall A-102,1st Floor,D-16,RFID_4E5F6A,FP_103,09:30 AM
+7377211CS201,Dinesh Kumar,CSE,CS8591,Computer Networks,Hall B-204,2nd Floor,D-01,RFID_7B8C9D,FP_201,09:30 AM
+7377211CS202,Harini Venkatesh,CSE,CS8591,Computer Networks,Hall B-204,2nd Floor,D-02,RFID_2D3E4F,FP_202,09:30 AM
+7377211IT301,Kavya Murugan,IT,IT8502,Web Technology,Hall C-301,3rd Floor,D-08,RFID_5A6B7C,FP_301,09:30 AM
+7377211ME401,Manoj Prabhakar,MECH,ME8593,Design of Machine Elements,Hall D-105,1st Floor,D-22,RFID_8D9E0F,FP_401,09:30 AM
+7377211EE501,Pooja Sundaram,EEE,EE8503,Power Electronics,Hall E-201,2nd Floor,D-05,RFID_3C4D5E,FP_501,09:30 AM

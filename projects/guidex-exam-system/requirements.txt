@@ -1,0 +1,9 @@
+﻿# GuidEx - Smart Exam Hall Guidance System
+# Standard Library dependencies (No external pip install required for core application):
+# - tkinter (GUI framework)
+# - csv (student record database)
+# - os, sys, datetime (system & timestamp operations)
+# - unittest (automated verification tests)
+
+# Optional hardware serial communication module (for physical Arduino/RFID readers):
+pyserial>=3.5

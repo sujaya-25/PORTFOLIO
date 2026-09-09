@@ -1,0 +1,156 @@
+﻿{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Sujaya K S",
+    "label": "Electronics and Communication Engineer | Software & IoT Developer",
+    "email": "sujayaaks@gmail.com",
+    "phone": "+91 9384466268",
+    "url": "https://github.com/sujaya-25",
+    "summary": "Final-year ECE student skilled in Python, Java, DSA, and SQL with hands-on project experience in software development and IoT automation. Interested in software engineering and problem-solving. Looking for an opportunity to apply my skills, learn from real-world projects, and grow in a professional IT environment.",
+    "location": {
+      "city": "Coimbatore",
+      "region": "Tamil Nadu",
+      "countryCode": "IN"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "sujaya-25",
+        "url": "https://github.com/sujaya-25"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "sujayaks",
+        "url": "https://www.linkedin.com/in/sujayaks/"
+      }
+    ]
+  },
+  "education": [
+    {
+      "institution": "Dr. N.G.P. Institute of Technology, Coimbatore",
+      "area": "Electronics and Communication Engineering",
+      "studyType": "Bachelor of Engineering (B.E.)",
+      "startDate": "2023",
+      "endDate": "Present",
+      "score": "8.7 CGPA"
+    },
+    {
+      "institution": "Amrita Vidyalayam CBSE Senior Secondary School",
+      "area": "Higher Secondary (HSC / Class XII)",
+      "studyType": "Senior Secondary",
+      "endDate": "2023-05",
+      "score": "80.4%"
+    },
+    {
+      "institution": "Amrita Vidyalayam CBSE Senior Secondary School",
+      "area": "Secondary School Leaving Certificate (SSLC / Class X)",
+      "studyType": "Secondary",
+      "endDate": "2021-03",
+      "score": "88.2%"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Programming Languages",
+      "level": "Advanced",
+      "keywords": ["Python", "Java", "C Programming"]
+    },
+    {
+      "name": "Core Computer Science",
+      "level": "Advanced",
+      "keywords": ["Data Structures & Algorithms (DSA)", "Object-Oriented Programming (OOP)", "Database Management Systems (DBMS)", "SQL"]
+    },
+    {
+      "name": "Frameworks & Libraries",
+      "level": "Proficient",
+      "keywords": ["Python Tkinter (GUI)"]
+    },
+    {
+      "name": "Embedded Systems & Hardware",
+      "level": "Proficient",
+      "keywords": ["Arduino IDE", "Microcontrollers", "NodeMCU ESP8266", "Biometric Sensors", "RFID Interfacing"]
+    },
+    {
+      "name": "Developer Tools",
+      "level": "Proficient",
+      "keywords": ["GitHub", "VS Code", "MS Excel", "Cadence EDA"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "GuidEx — Smart Exam Hall Guidance System",
+      "description": "Developed a smart exam hall guidance system using RFID and biometric authentication with a Python Tkinter GUI and CSV database backend.",
+      "highlights": [
+        "Eliminated paper notice bottleneck with sub-second authentication and hall routing",
+        "Implemented real-time seat matrix grid visualizer in Tkinter",
+        "Built duplicate scan prevention and session audit logging with CSV export"
+      ],
+      "keywords": ["Python", "Tkinter", "RFID", "Biometrics", "CSV Data Handling"],
+      "startDate": "2025",
+      "endDate": "2026"
+    },
+    {
+      "name": "Automatic Rain-Sensing Retractable Clothesline",
+      "description": "Designed an automated rain-sensing retractable clothesline using a rain sensor module and microcontroller to protect drying fabrics.",
+      "highlights": [
+        "10-point moving average digital filter to eliminate false triggers from humidity",
+        "Hysteresis threshold logic preventing motor oscillation",
+        "Emergency watchdog cutoff protection"
+      ],
+      "keywords": ["Microcontrollers", "Arduino IDE", "Rain Sensor", "Motor Actuator", "IoT"],
+      "startDate": "2024",
+      "endDate": "2025"
+    },
+    {
+      "name": "Smart Fingerprint Door Lock System",
+      "description": "Developed a secure biometric access control door lock using Arduino and optical fingerprint sensing.",
+      "highlights": [
+        "Optocoupled relay actuation with 12V solenoid lock",
+        "Security lockout penalty after 3 consecutive failed attempts",
+        "Reverse-biased flyback diode inductive protection"
+      ],
+      "keywords": ["Arduino", "Biometrics", "Solenoid Lock", "Relay Control", "Embedded C++"],
+      "startDate": "2023",
+      "endDate": "2024"
+    }
+  ],
+  "work": [
+    {
+      "name": "TRIOX Technology, Coimbatore",
+      "position": "IoT Intern",
+      "startDate": "2025-06-01",
+      "endDate": "2025-06-30",
+      "summary": "Gained hands-on experience in IoT fundamentals by working with sensors, microcontrollers (Arduino & NodeMCU), and cloud monitoring platforms. Developed a rain sensor automation demo.",
+      "highlights": ["Sensor telemetry", "NodeMCU & Arduino", "Real-time cloud monitoring"]
+    },
+    {
+      "name": "Coimbatore Institute of Technology (CIT)",
+      "position": "Winter Intern",
+      "startDate": "2025-11-01",
+      "endDate": "2025-11-30",
+      "summary": "Trained in Smart Systems and Emerging Technologies, focusing on embedded systems, real-time applications, and hardware-software interfacing."
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Elite Certification in Cryptography and Network Security",
+      "issuer": "NPTEL (IIT Kharagpur)",
+      "date": "2026"
+    },
+    {
+      "name": "Computer Architecture",
+      "issuer": "NPTEL",
+      "date": "2024"
+    },
+    {
+      "name": "Semi-Custom ASIC Design Flow using Cadence EDA",
+      "issuer": "SREC UTSAVA'26",
+      "date": "2026-01"
+    },
+    {
+      "name": "PCB Designing and Fabrication",
+      "issuer": "Pinnacle 2024, CIT",
+      "date": "2024"
+    }
+  ]
+}

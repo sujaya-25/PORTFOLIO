@@ -1,0 +1,589 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sujaya K S — Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+    :root {
+      --primary: #0f172a;
+      --secondary: #334155;
+      --accent: #0284c7;
+      --accent-dark: #0369a1;
+      --border: #e2e8f0;
+      --bg: #ffffff;
+      --text-muted: #64748b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--primary);
+      background-color: #f1f5f9;
+      line-height: 1.45;
+      font-size: 9.8pt;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Print toolbar (Hidden in print) */
+    .toolbar {
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      display: flex;
+      gap: 10px;
+      z-index: 1000;
+      background: white;
+      padding: 8px 14px;
+      border-radius: 9999px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      border: 1px solid var(--border);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      border: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+      background: #0284c7;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #0369a1;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #334155;
+      border: 1px solid #cbd5e1;
+    }
+
+    .btn-outline:hover {
+      background: #f8fafc;
+    }
+
+    /* Page container */
+    .resume-page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 24px auto;
+      background: var(--bg);
+      padding: 16mm 18mm;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      border-radius: 2px;
+      position: relative;
+    }
+
+    /* Header */
+    header {
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 12px;
+      margin-bottom: 12px;
+    }
+
+    .name-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 6px;
+    }
+
+    h1.name {
+      font-size: 22pt;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #0f172a;
+      line-height: 1.1;
+    }
+
+    .subtitle {
+      font-size: 11pt;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: 2px;
+    }
+
+    .contact-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 8.8pt;
+      color: var(--secondary);
+      margin-top: 4px;
+    }
+
+    .contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      text-decoration: none;
+      color: var(--secondary);
+    }
+
+    .contact-item i {
+      color: var(--accent);
+      font-size: 9.5pt;
+    }
+
+    .contact-item a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .contact-item a:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    /* Section styling */
+    section {
+      margin-bottom: 11px;
+    }
+
+    h2.section-heading {
+      font-size: 10.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #0f172a;
+      border-bottom: 1px solid #cbd5e1;
+      padding-bottom: 3px;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    h2.section-heading i {
+      color: var(--accent);
+      font-size: 9.5pt;
+    }
+
+    p.objective-text {
+      font-size: 9.3pt;
+      color: #334155;
+      text-align: justify;
+      line-height: 1.42;
+    }
+
+    /* Skills Grid */
+    .skills-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 9.1pt;
+    }
+
+    .skills-table td {
+      padding: 2.5px 0;
+      vertical-align: top;
+    }
+
+    .skill-category {
+      font-weight: 600;
+      color: #0f172a;
+      width: 155px;
+    }
+
+    .skill-items {
+      color: #334155;
+    }
+
+    /* Strengths list */
+    .strengths-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px 14px;
+      font-size: 9.1pt;
+    }
+
+    .strength-bullet {
+      position: relative;
+      padding-left: 14px;
+      color: #334155;
+    }
+
+    .strength-bullet::before {
+      content: "•";
+      position: absolute;
+      left: 2px;
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    /* Education */
+    .edu-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+    }
+
+    .edu-left strong {
+      font-size: 9.6pt;
+      color: #0f172a;
+    }
+
+    .edu-left div {
+      font-size: 8.8pt;
+      color: #475569;
+    }
+
+    .edu-right {
+      text-align: right;
+      font-size: 9pt;
+      font-weight: 600;
+      color: var(--accent-dark);
+      white-space: nowrap;
+    }
+
+    /* Projects */
+    .project-item {
+      margin-bottom: 8px;
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2px;
+    }
+
+    .project-title {
+      font-size: 9.8pt;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .project-tech {
+      font-size: 8.4pt;
+      font-weight: 500;
+      color: var(--accent);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .project-date {
+      font-size: 8.6pt;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    ul.project-bullets {
+      padding-left: 15px;
+      font-size: 8.9pt;
+      color: #334155;
+    }
+
+    ul.project-bullets li {
+      margin-bottom: 1.5px;
+      line-height: 1.35;
+    }
+
+    /* Experience */
+    .exp-item {
+      margin-bottom: 6px;
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 9.4pt;
+      margin-bottom: 2px;
+    }
+
+    .exp-title {
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .exp-org {
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .exp-date {
+      font-size: 8.6pt;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* Certifications & Achievements */
+    .certs-list {
+      padding-left: 15px;
+      font-size: 8.8pt;
+      color: #334155;
+    }
+
+    .certs-list li {
+      margin-bottom: 2px;
+      line-height: 1.35;
+    }
+
+    /* Print Styles */
+    @media print {
+      body {
+        background: transparent;
+        color: #000;
+      }
+
+      .toolbar {
+        display: none !important;
+      }
+
+      .resume-page {
+        margin: 0;
+        padding: 10mm 14mm;
+        box-shadow: none;
+        width: 100%;
+        min-height: auto;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      @page {
+        size: A4;
+        margin: 8mm;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Print Toolbar -->
+  <div class="toolbar">
+    <button class="btn btn-primary" onclick="window.print()">
+      <i class="fas fa-print"></i> Print to PDF
+    </button>
+    <a href="../index.html" class="btn btn-outline">
+      <i class="fas fa-globe"></i> Interactive Portfolio
+    </a>
+  </div>
+
+  <div class="resume-page">
+    <header>
+      <div class="name-title-row">
+        <div>
+          <h1 class="name">SUJAYA K S</h1>
+          <div class="subtitle">Electronics and Communication Engineering</div>
+        </div>
+      </div>
+
+      <div class="contact-bar">
+        <span class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:sujayaaks@gmail.com">sujayaaks@gmail.com</a>
+        </span>
+        <span class="contact-item">
+          <i class="fas fa-phone-alt"></i>
+          <a href="tel:9384466268">+91 9384466268</a>
+        </span>
+        <span class="contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          Coimbatore, Tamil Nadu
+        </span>
+        <span class="contact-item">
+          <i class="fab fa-github"></i>
+          <a href="https://github.com/sujaya-25" target="_blank">github.com/sujaya-25</a>
+        </span>
+        <span class="contact-item">
+          <i class="fab fa-linkedin"></i>
+          <a href="https://www.linkedin.com/in/sujayaks/" target="_blank">linkedin.com/in/sujayaks</a>
+        </span>
+      </div>
+    </header>
+
+    <!-- Objective -->
+    <section>
+      <h2 class="section-heading"><i class="fas fa-bullseye"></i> 1. Objective</h2>
+      <p class="objective-text">
+        Final-year ECE student skilled in Python, Java, DSA, and SQL with hands-on project experience in software development and IoT automation. Interested in software engineering and algorithmic problem-solving. Looking for an opportunity to apply my skills, learn from real-world engineering projects, and grow in a professional IT environment.
+      </p>
+    </section>
+
+    <!-- Technical Qualifications -->
+    <section>
+      <h2 class="section-heading"><i class="fas fa-code"></i> 2. Technical Qualifications</h2>
+      <table class="skills-table">
+        <tr>
+          <td class="skill-category">• Programming:</td>
+          <td class="skill-items">Java, Python, C Programming</td>
+        </tr>
+        <tr>
+          <td class="skill-category">• Core Concepts:</td>
+          <td class="skill-items">Data Structures & Algorithms (DSA), OOP, DBMS, SQL</td>
+        </tr>
+        <tr>
+          <td class="skill-category">• Libraries:</td>
+          <td class="skill-items">GUI Development (Python Tkinter)</td>
+        </tr>
+        <tr>
+          <td class="skill-category">• Other Tools & IDEs:</td>
+          <td class="skill-items">Arduino IDE, GitHub, VS Code, MS Excel, Cadence EDA</td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- Key Strengths -->
+    <section>
+      <h2 class="section-heading"><i class="fas fa-star"></i> 3. Key Strengths</h2>
+      <div class="strengths-grid">
+        <div class="strength-bullet"><strong>Strong foundation</strong> in Programming, Embedded Systems, and Electronics</div>
+        <div class="strength-bullet"><strong>Proficient in</strong> Java, Python, Arduino, and Sensor Interfacing</div>
+        <div class="strength-bullet"><strong>Skilled in</strong> Hardware–Software Integration, Testing, and Debugging</div>
+        <div class="strength-bullet"><strong>Strong Analytical Thinking</strong>, Problem Solving, and Adaptability</div>
+      </div>
+    </section>
+
+    <!-- Academic Credentials -->
+    <section>
+      <h2 class="section-heading"><i class="fas fa-graduation-cap"></i> 4. Academic Credentials</h2>
+      
+      <div class="edu-item">
+        <div class="edu-left">
+          <strong>B.E. Electronics and Communication Engineering</strong>
+          <div>Dr. N.G.P. Institute of Technology, Coimbatore</div>
+        </div>
+        <div class="edu-right">2023 – Present | CGPA: 8.7</div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-left">
+          <strong>HSC — Class XII</strong>
+          <div>Amrita Vidyalayam CBSE Senior Secondary School</div>
+        </div>
+        <div class="edu-right">May 2023 | 80.4%</div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-left">
+          <strong>SSLC — Class X</strong>
+          <div>Amrita Vidyalayam CBSE Senior Secondary School</div>
+        </div>
+        <div class="edu-right">March 2021 | 88.2%</div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section>
+      <h2 class="section-heading"><i class="fas fa-laptop-code"></i> 5. Projects</h2>
+
+      <!-- Project 1: GuidEx -->
+      <div class="project-item">
+        <div class="project-header">
+          <div>
+            <span class="project-title">GuidEx — Smart Exam Hall Guidance System</span>
+            <span class="project-tech">| Python, Tkinter, RFID, Biometrics, CSV</span>
+          </div>
+          <span class="project-date">2025–2026</span>
+        </div>
+        <ul class="project-bullets">
+          <li>Developed a smart exam hall guidance kiosk using RFID and biometric authentication to streamline student entry.</li>
+          <li>Built a high-responsiveness Python GUI using Tkinter for student verification, room routing, and visual seat mapping.</li>
+          <li>Implemented data handling using CSV for rapid record lookup and real-time exam hall allocation.</li>
+          <li>Engineered robust authentication logic, duplicate check-in prevention, and session audit log export.</li>
+        </ul>
+      </div>
+
+      <!-- Project 2: Automatic Rain-Sensing Clothesline -->
+      <div class="project-item">
+        <div class="project-header">
+          <div>
+            <span class="project-title">Automatic Rain-Sensing Retractable Clothesline</span>
+            <span class="project-tech">| Microcontroller, Rain Sensor, Motor Actuator</span>
+          </div>
+          <span class="project-date">2024–2025</span>
+        </div>
+        <ul class="project-bullets">
+          <li>Designed an autonomous rain-sensing retractable clothesline using an analog/digital moisture sensor and microcontroller.</li>
+          <li>Automated motor retraction to shelter clothes from sudden rainfall, reducing manual effort and preventing fabric damage.</li>
+          <li>Implemented moving average digital filtering and hysteresis bands to eliminate false triggers from high humidity.</li>
+        </ul>
+      </div>
+
+      <!-- Project 3: Smart Fingerprint Door Lock -->
+      <div class="project-item">
+        <div class="project-header">
+          <div>
+            <span class="project-title">Smart Fingerprint Door Lock System</span>
+            <span class="project-tech">| Arduino, Optical Biometric Sensor, Solenoid Relay</span>
+          </div>
+          <span class="project-date">2023–2024</span>
+        </div>
+        <ul class="project-bullets">
+          <li>Developed a fingerprint-based door access control system on Arduino Uno for secure, keyless user authentication.</li>
+          <li>Integrated an optical biometric sensor with relay-actuated 12V solenoid locking and automatic 5-second relatch timer.</li>
+          <li>Implemented controlled access logic and lockout alarms after repeated unauthorized attempts to prevent forced entry.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Professional Experience -->
+    <section>
+      <h2 class="section-heading"><i class="fas fa-briefcase"></i> 6. Professional Experience</h2>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div>
+            <span class="exp-title">IoT Internship</span> — <span class="exp-org">TRIOX Technology, Coimbatore</span>
+          </div>
+          <span class="exp-date">June 2025</span>
+        </div>
+        <ul class="project-bullets">
+          <li>Gained hands-on experience in IoT fundamentals by interfacing sensors and microcontrollers (Arduino & NodeMCU).</li>
+          <li>Utilized cloud platforms for real-time data monitoring and developed a rain sensor automation mini-project demonstrating practical IoT.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div>
+            <span class="exp-title">Winter Internship</span> — <span class="exp-org">Coimbatore Institute of Technology (CIT)</span>
+          </div>
+          <span class="exp-date">Nov 2025</span>
+        </div>
+        <ul class="project-bullets">
+          <li>Trained in Smart Systems and Emerging Technologies, focusing on embedded hardware interfacing and real-time automation.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Certifications & Achievements -->
+    <section>
+      <h2 class="section-heading"><i class="fas fa-award"></i> 7. Certifications & Achievements</h2>
+      <ul class="certs-list">
+        <li><strong>Elite Certification in Cryptography and Network Security</strong> — NPTEL (IIT Kharagpur, 2026).</li>
+        <li><strong>Computer Architecture</strong> — Successfully certified by NPTEL (2024).</li>
+        <li><strong>Smart India Hackathon (SIH) 2025</strong> — Presented project <em>“Crowdsourced Civic Issue Reporting and Resolution System”</em> under Clean & Green Technology theme.</li>
+        <li><strong>Workshop on Semi-Custom ASIC Design Flow using Cadence EDA</strong> — SREC UTSAVA'26, Sri Ramakrishna Engineering College (Jan 2026).</li>
+        <li><strong>Paper Presentation in “Circuit Masters”</strong> — SREC UTSAVA'26, Sri Ramakrishna Engineering College (Jan 2026).</li>
+        <li><strong>Workshop on PCB Designing and Fabrication</strong> — Pinnacle 2024, Coimbatore Institute of Technology.</li>
+        <li><strong>Winners in Throwball (2024)</strong> — Intra-college athletic competition.</li>
+      </ul>
+    </section>
+  </div>
+
+</body>
+</html>
